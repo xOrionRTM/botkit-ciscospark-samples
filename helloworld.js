@@ -16,7 +16,7 @@ var Botkit = require('botkit');
 var controller = Botkit.sparkbot({
     log: true,
     public_address: 'https://dmonbot.herokuapp.com',
-    ciscospark_access_token: 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OLzA4YmNhNzI1LWU2ZDEtNDdmMS1hZmY2LTEwMzgyNDJjZmQ0Yw',
+    ciscospark_access_token: 'wgHf3QQZqrK3ZqTqs6w4_5RmpVjdQxbj55fcoaptSD',
     secret: 'empty', // this is a RECOMMENDED security setting that checks of incoming payloads originate from Cisco Spark
     webhook_name: 'http://8f818026.ngrok.io'
 });
