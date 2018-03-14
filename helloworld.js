@@ -13,28 +13,12 @@
 
 var Botkit = require('botkit');
 
-if (!process.env.SPARK_TOKEN) {
-    console.log("Could not start as this bot requires a Cisco Spark API access token.");
-    console.log("Please add env variable SPARK_TOKEN on the command line");
-    console.log("Example: ");
-    console.log("> SPARK_TOKEN=XXXXXXXXXXXX PUBLIC_URL=YYYYYYYYYYYYY node helloworld.js");
-    process.exit(1);
-}
-
-if (!process.env.PUBLIC_URL) {
-    console.log("Could not start as this bot must expose a public endpoint.");
-    console.log("Please add env variable PUBLIC_URL on the command line");
-    console.log("Example: ");
-    console.log("> SPARK_TOKEN=XXXXXXXXXXXX PUBLIC_URL=YYYYYYYYYYYYY node helloworld.js");
-    process.exit(1);
-}
-
 var controller = Botkit.sparkbot({
     log: true,
-    public_address: process.env.PUBLIC_URL,
-    ciscospark_access_token: process.env.SPARK_TOKEN,
-    secret: process.env.SECRET, // this is a RECOMMENDED security setting that checks of incoming payloads originate from Cisco Spark
-    webhook_name: process.env.WEBHOOK_NAME || 'built with BotKit (development)'
+    public_address: 'https://dmonbot.herokuapp.com',
+    ciscospark_access_token: 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OLzA4YmNhNzI1LWU2ZDEtNDdmMS1hZmY2LTEwMzgyNDJjZmQ0Yw',
+    secret: 'empty', // this is a RECOMMENDED security setting that checks of incoming payloads originate from Cisco Spark
+    webhook_name: 'http://8f818026.ngrok.io'
 });
 
 var bot = controller.spawn({
